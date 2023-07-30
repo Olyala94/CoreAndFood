@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace CoreAndFood.Repository
 {
-    public class CategoryRepository
+    public class CategoryRepository: GenericRepository<Category>
     {
         
     }

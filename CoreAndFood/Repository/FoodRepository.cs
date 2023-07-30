@@ -2,7 +2,7 @@
 
 namespace CoreAndFood.Repository
 {
-    public class FoodRepository
+    public class FoodRepository: GenericRepository<Food>
     {
         
     }
