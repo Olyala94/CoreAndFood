@@ -1,4 +1,5 @@
 ﻿using CoreAndFood.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoreAndFood.Repository
 {
@@ -29,9 +30,14 @@ namespace CoreAndFood.Repository
             c.SaveChanges();
         }
 
-        public T TGet(int id)
+        public void TGetList(int id)
         {
-            return c.Set<T>().Find(id);
+            c.Set<T>().Find(id);
+        }
+
+        public List<T> TList(string p)
+        {
+            return c.Set<T>().Include(p).ToList();
         }
     }
 }

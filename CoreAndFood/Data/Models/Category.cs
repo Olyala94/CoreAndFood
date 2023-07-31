@@ -7,6 +7,7 @@ namespace CoreAndFood.Data.Models
         [Key] 
         public int CategoryId { get; set; }
 
+        [Required(ErrorMessage = "Category name cannot be empty")] //Neyin üstünde ise ona işlem yapar
         public string CategoryName { get; set; }
 
         public string Description { get; set; }
