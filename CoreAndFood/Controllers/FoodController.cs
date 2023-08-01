@@ -7,12 +7,11 @@ namespace CoreAndFood.Controllers
 {
     public class FoodController : Controller
     {
-        Context c = new Context();  
+        Context c = new Context(); 
+        FoodRepository foodRepository = new FoodRepository(); 
 
         public IActionResult Index()
-        {
-            FoodRepository foodRepository = new FoodRepository();   
-
+        {  
             return View(foodRepository.TList("Category"));
         }
 
@@ -32,7 +31,15 @@ namespace CoreAndFood.Controllers
         [HttpPost]
         public IActionResult AddFood(Food p)
         {
-            return View();
+            foodRepository.TAdd(p);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult DeleteFood(int id)
+        {
+          
+            foodRepository.TDelete(new Food { FoodId = id });
+            return RedirectToAction("Index");   
         }
     }
 }

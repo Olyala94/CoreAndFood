@@ -30,9 +30,9 @@ namespace CoreAndFood.Repository
             c.SaveChanges();
         }
 
-        public void TGetList(int id)
+        public T TGetList(int id)
         {
-            c.Set<T>().Find(id);
+           return c.Set<T>().Find(id);
         }
 
         public List<T> TList(string p)

@@ -30,10 +30,36 @@ namespace CoreAndFood.Controllers
             return RedirectToAction("Index");
         }
 
-        //public IActionResult CategoriesDelete(int id)
-        //{
-        //    categoryrepository.TDelete(id);
-        //    return RedirectToAction("Index");
-        //}
+        public IActionResult CategoriesGet(int id)
+        {
+            var values = categoryrepository.TGetList(id);
+            Category category = new Category()
+            {
+                CategoryName = values.CategoryName,
+                Description = values.Description,   
+                CategoryId = values.CategoryId      
+            };
+            return View(category);
+        }
+
+        [HttpPost]
+        public IActionResult CategoriesUpdate(Category p)
+        {
+            var x = categoryrepository.TGetList(p.CategoryId);
+            x.CategoryName = p.CategoryName;
+            x.Description = p.Description;
+            x.Status = true;
+            categoryrepository.TUpdate(x);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult CategoriesDelete(int id)
+        {
+            var x = categoryrepository.TGetList(id);
+            x.Status = false;
+            categoryrepository.TUpdate(x);
+
+            return RedirectToAction("Index");
+        }
     }
 }

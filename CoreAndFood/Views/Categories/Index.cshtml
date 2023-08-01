@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int coutn = 0;
 }
 
 <h1>Category List</h1>
@@ -11,16 +12,19 @@
     <tr>
         <th>#</th>
         <th>Category Name</th>
+        <th>Status</th>
         <th>Delete</th>
         <th>Update</th>
     </tr>
     @foreach (var item in Model)
     {
+        coutn +=1;
         <tr>
+            <td>@coutn</td>
             <td>@item.CategoryName</td>
-            <td>@item.CategoryId</td>
-            <td><a href="#" class="btn btn-danger">Delete</a></td>
-            <td><a href="#" class="btn btn-success">Update</a></td>
+            <td>@item.Status</td>
+            <td><a href="/Categories/CategoriesDelete/@item.CategoryId/" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?')">Delete</a></td>
+            <td><a href="/Categories/CategoriesGet/@item.CategoryId" class="btn btn-success">Update</a></td>
         </tr>
     }
 </table>
