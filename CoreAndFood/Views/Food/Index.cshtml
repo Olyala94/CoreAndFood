@@ -1,4 +1,8 @@
-﻿@model List<CoreAndFood.Data.Models.Food>
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core
+
+@model IPagedList<CoreAndFood.Data.Models.Food>
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -26,11 +30,13 @@
             <td>@item.Stock</td>
             <td>@item.Category.CategoryName</td>
             <td><a href="/Food/DeleteFood/@item.FoodId" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?')">Delete</a></td>
-            <td><a href="#" class="btn btn-success">Update</a></td>
+            <td><a href="/Food/FoodGet/@item.FoodId/" class="btn btn-success">Update</a></td>
             <td><a href="#" class="btn btn-info">Details</a></td>
         </tr>
     }
 </table>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
 <a href="/Food/AddFood/" class="btn btn-primary">Add New Food</a>
 
 
