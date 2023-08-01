@@ -41,5 +41,32 @@ namespace CoreAndFood.Controllers
 
             return class1s;
         }
+
+        public IActionResult Index3()
+        {
+            return View();
+        }
+        public IActionResult VisualizeProductResult2()
+        {
+            return Json(FoodList());
+        }
+        public List<Class2> FoodList()
+        {
+            List<Class2> cs2 = new List<Class2>();
+            using (var c = new Context())
+            {
+                cs2 = c.Foods.Select(x => new Class2
+                {
+                    foodname = x.FoodName,
+                    stock = x.Stock
+                }).ToList();
+            }
+            return cs2;
+        }
+
+        public IActionResult Statistics() 
+        {
+            return View();
+        }
     }
 }
