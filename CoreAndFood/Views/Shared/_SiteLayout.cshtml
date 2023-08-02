@@ -51,11 +51,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- header -->
 	<div class="agileits_header">
 		<div class="w3l_offers">
-			<a href="products.html">Today's special Offers !</a>
+			<a href="products.html">Bugüne özel indirimler !</a>
 		</div>
 		<div class="w3l_search">
 			<form action="#" method="post">
-				<input type="text" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
+				<input type="text" name="Product" value="Bir ürün arayın..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
 				<input type="submit" value=" ">
 			</form>
 		</div>
@@ -84,7 +84,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</ul>
 		</div>
 		<div class="w3l_header_right1">
-			<h2><a href="mail.html">Contact Us</a></h2>
+			<h2><a href="mail.html">Bize Ulaşın</a></h2>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
@@ -107,20 +107,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="logo_products">
 		<div class="container">
 			<div class="w3ls_logo_products_left">
-				<h1><a href="index.html"><span>Grocery</span> Store</a></h1>
+				<h1><a href="index.html"><span> Lezzetli </span> Gıdalar </a></h1>
 			</div>
 			<div class="w3ls_logo_products_left1">
 				<ul class="special_items">
-					<li><a href="events.html">Events</a><i>/</i></li>
-					<li><a href="about.html">About Us</a><i>/</i></li>
-					<li><a href="products.html">Best Deals</a><i>/</i></li>
-					<li><a href="services.html">Services</a></li>
+					<li><a href="events.html">Ana Sayfa</a><i>/</i></li>
+					<li><a href="about.html">Hakkımızda</a><i>/</i></li>
+					<li><a href="products.html">Lezzetli Tarifler</a><i>/</i></li>
+					<li><a href="services.html">Hizmetlerimiz</a></li>
 				</ul>
 			</div>
 			<div class="w3ls_logo_products_left1">
 				<ul class="phone_email">
-					<li><i class="fa fa-phone" aria-hidden="true"></i>(+0123) 234 567</li>
-					<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@grocery.com">store@grocery.com</a></li>
+					<li><i class="fa fa-phone" aria-hidden="true"></i> +90 552 123 56 78 </li>
+					<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="lezzetligidalar@gmail.com">lezzetligidalar@gmail.com</a></li>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>
@@ -141,49 +141,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</button>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-					<ul class="nav navbar-nav nav_1">
-						<li><a href="products.html">Branded Foods</a></li>
-						<li><a href="household.html">Households</a></li>
-						<li class="dropdown mega-dropdown active">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Veggies & Fruits<span class="caret"></span></a>
-							<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>
-										<li><a href="vegetables.html">Vegetables</a></li>
-										<li><a href="vegetables.html">Fruits</a></li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li><a href="kitchen.html">Kitchen</a></li>
-						<li><a href="short-codes.html">Short Codes</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Beverages<span class="caret"></span></a>
-							<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>
-										<li><a href="drinks.html">Soft Drinks</a></li>
-										<li><a href="drinks.html">Juices</a></li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li><a href="pet.html">Pet Food</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Frozen Foods<span class="caret"></span></a>
-							<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>
-										<li><a href="frozen.html">Frozen Snacks</a></li>
-										<li><a href="frozen.html">Frozen Nonveg</a></li>
-									</ul>
-								</div>
-							</div>
-						</li>
-						<li><a href="bread.html">Bread & Bakery</a></li>
-					</ul>
-				</div><!-- /.navbar-collapse -->
+
+				@await Component.InvokeAsync("CategoryGetList")
+				
+				<!-- /.navbar-collapse -->
 			</nav>
 		</div>
 		<div class="w3l_banner_nav_right">
@@ -192,25 +153,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul class="slides">
 						<li>
 							<div class="w3l_banner_nav_right_banner">
-								<h3>Make your <span>food</span> with Spicy.</h3>
+								<h3> En leziz gıdalar <span>yemekler</span> ve baharatlar.</h3>
 								<div class="more">
-									<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+									<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Şimdi Al</a>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="w3l_banner_nav_right_banner1">
-								<h3>Make your <span>food</span> with Spicy.</h3>
+								<h3>tamamen organik <span>doğal</span> tarla ürünleri.</h3>
 								<div class="more">
-									<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+									<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Şimdi Al</a>
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="w3l_banner_nav_right_banner2">
-								<h3>upto <i>50%</i> off.</h3>
+								<h3>Doğal içeceklerde <i>50%</i> indirim.</h3>
 								<div class="more">
-									<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Shop now</a>
+									<a href="products.html" class="button--saqui button--round-l button--text-thick" data-text="Shop now">Şimdi Al</a>
 								</div>
 							</div>
 						</li>
