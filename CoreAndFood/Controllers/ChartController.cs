@@ -105,7 +105,6 @@ namespace CoreAndFood.Controllers
             var deger11p = c.Foods.Where(y => y.CategoryId == deger11).Sum(x => x.Stock);
             ViewBag.d11 = deger11p;
 
-
             var deger12 = c.Foods.OrderByDescending(x => x.Price).Select(y => y.FoodName).FirstOrDefault();
             ViewBag.d12 = deger12;
 
