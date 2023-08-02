@@ -1,15 +1,18 @@
 ﻿using CoreAndFood.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreAndFood.Controllers
-{
+{    
+    [AllowAnonymous]
+
     public class ChartController : Controller
-    {
+    { 
         public IActionResult Index()
         {
             return View();
         }
-
+  
         public IActionResult Index2()
         {
             return View();
@@ -42,6 +45,7 @@ namespace CoreAndFood.Controllers
             return class1s;
         }
 
+     
         public IActionResult Index3()
         {
             return View();
