@@ -10,5 +10,10 @@ namespace CoreAndFood.Controllers
         {
             return View();
         }
+
+        public IActionResult CategoryDetails()
+        {
+            return View();  
+        }
     }
 }
