@@ -229,8 +229,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- top-brands -->
 	<div class="top-brands">
 		<div class="container">
+			
 			<h3>Ürünlerimiz</h3>
-			@await Component.InvokeAsync("FoodListByCategory")
+			@await Component.InvokeAsync("FoodListByCategory", new {id = ViewBag.x})
 		@*	@RenderBody()*@
 		</div>
 	</div>

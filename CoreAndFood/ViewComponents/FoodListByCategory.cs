@@ -7,8 +7,8 @@ namespace CoreAndFood.ViewComponents
 	{
 		public IViewComponentResult Invoke(int id)
 		{
-			id = 1;
 			FoodRepository foodRepository = new FoodRepository();
+
 			var foodlist = foodRepository.List(x=>x.CategoryId == id);
 			return View(foodlist);
 		}
