@@ -10,8 +10,12 @@ namespace CoreAndFood.Controllers
         CategoryRepository categoryrepository = new CategoryRepository();
         //[Authorize]
        
-        public IActionResult Index()
+        public IActionResult Index(string p)
         {
+            if (!string.IsNullOrEmpty(p))
+            {
+                return View(categoryrepository.List(x=>x.CategoryName == p));
+            }
            return View(categoryrepository.TList());
         }
 

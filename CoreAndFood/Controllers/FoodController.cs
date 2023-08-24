@@ -9,6 +9,7 @@ namespace CoreAndFood.Controllers
     public class FoodController : Controller
     {
         Context c = new Context(); 
+
         FoodRepository foodRepository = new FoodRepository(); 
 
         public IActionResult Index(int page=1)
@@ -30,9 +31,24 @@ namespace CoreAndFood.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddFood(Food p)
+        public IActionResult AddFood(urunekle p)
         {
-            foodRepository.TAdd(p);
+            Food f = new Food();
+            if(p != null)
+            {
+                var extension = Path.GetExtension(p.ImageURL.FileName);
+                var newimagename = Guid.NewGuid() + extension;  
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/resimler", newimagename);
+                var stream = new FileStream(location, FileMode.Create);
+                p.ImageURL.CopyTo(stream);
+                f.ImageURL = newimagename;
+            }
+            f.FoodName= p.FoodName;
+            f.Price = p.Price;
+            f.Stock = p.Stock;
+            f.CategoryId = p.CategoryId;
+            f.Description = p.Description;
+            foodRepository.TAdd(f);
             return RedirectToAction("Index");
         }
 
